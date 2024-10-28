@@ -1,0 +1,17 @@
+<div class="container ">
+  <h1 class="text-center m-5">Описание коллекции</h1>
+  <div class="">
+    <div class="" *ngIf="product.image">
+      <div class="card mb-4">
+        <img [src]="product.image" class="card-img-top" [alt]="product.title">
+        <div class="card-body">
+          <h5 class="card-title">{{ product.title }}</h5>
+          <p class="card-text">{{ product.description }}</p>
+          <p class="card-price">Цена: {{ product.price }}₽</p>
+          <a (click)="addToCart(product.title)" class="btn btn-primary hvr-ripple-out">Купить</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

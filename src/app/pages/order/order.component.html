@@ -1,0 +1,69 @@
+
+<div class="container order-block">
+  <h2 class="text-center m-5">Сделать заказ</h2>
+  <div class="form col-lg-6"  *ngIf="isFormVisible">
+    <form class="row g-4" [formGroup]="orderForm" (ngSubmit)="onSubmit()">
+      <div class="col-md-6">
+        <label class="form-label">Имя</label>
+        <input type="text" class="form-control" id="name-input" formControlName="name">
+        <div *ngIf="orderForm.get('name')?.invalid && orderForm.get('name')?.touched" class="text-danger">
+          Имя может содержать только буквы.
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">Фамилия</label>
+        <input type="text" class="form-control" id="lastName-input"  formControlName="last_name">
+        <div *ngIf="orderForm.get('last_name')?.invalid && orderForm.get('last_name')?.touched" class="text-danger">
+          Фамилия может содержать только буквы.
+        </div>
+      </div>
+
+      <div class="col-md-12">
+        <label class="form-label">Товар</label>
+        <input type="text" class="form-control" name="productTitle" [(ngModel)]="product.title" formControlName="product" readonly>
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">Телефон</label>
+        <input type="text" class="form-control" id="phone-input" formControlName="phone">
+        <div *ngIf="orderForm.get('phone')?.invalid && orderForm.get('phone')?.touched" class="text-danger">
+          Телефон должен содержать 11 цифр.
+        </div>
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Страна</label>
+        <input type="text" class="form-control" id="country-input" formControlName="country" required>
+      </div>
+      <div class="col-md-12">
+        <label class="form-label">Индекс</label>
+        <input type="text" class="form-control" id="index-input" maxlength="6" formControlName="zip">
+      </div>
+      <div class="col md-12">
+        <label class="form-label">Адрес</label>
+        <input type="text" class="form-control" id="address-input" formControlName="address">
+        <div *ngIf="orderForm.get('address')?.invalid && orderForm.get('address')?.touched" class="text-danger">
+          Адрес может содержать буквы, цифры, пробелы, дефисы и слеши.
+        </div>
+      </div>
+      <div class="col-12">
+        <label class="form-label">Комментарий к заказу (необязательно)</label>
+        <textarea class="form-control" formControlName="comment"></textarea>
+      </div>
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary hvr-ripple-out" id="create-order" [disabled]="orderForm.invalid">Отправить</button>
+        <div *ngIf="submissionError" class="text-danger">Произошла ошибка. Попробуйте еще раз.</div>
+      </div>
+    </form>
+  </div>
+  <div class="popup" id="popup" *ngIf="successMessage">
+    <p>Спасибо за заказ. Мы свяжемся с вами в ближайшее время!</p>
+  </div>
+  <p *ngIf="submissionError" class="error-message">Произошла ошибка. Попробуйте еще раз.</p>
+</div>
+
+
+
+
+
+

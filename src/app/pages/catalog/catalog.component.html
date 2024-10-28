@@ -1,0 +1,20 @@
+<div class="container ">
+  <h1 class="text-center m-5">Наши чайные коллекции</h1>
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3">
+    <div class="col" *ngFor="let product of products">
+      <div class="card mb-4">
+        <img [src]="product.image" class="card-img-top" [alt]="product.title">
+        <div class="card-body">
+          <h5 class="card-title">{{ product.title }}</h5>
+          <p class="card-text">{{ product.description }}</p>
+          <p class="card-price">Цена: {{ product.price }}₽</p>
+          <a [routerLink]="['/products', product.id]"  class="btn btn-primary hvr-ripple-out">Подробнее</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="loading" class="loader-bg">
+  <div class="loader"></div>
+  </div>
+
+</div>

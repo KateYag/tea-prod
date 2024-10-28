@@ -1,1 +1,42 @@
-/* You can add global styles to this file, and also import other style files */
+.slick-next {
+  right: 32px;
+}
+.slick-prev {
+  z-index: 1;
+  left: 12px;
+}
+
+.slick-prev::before {
+  content: url("assets/images/strelka.png");
+}
+.slick-next::before {
+  content: url("assets/images/strelka2.png");
+}
+.mt-10 {
+  margin-top: 72px;
+}
+
+
+
+
+.form{
+  margin: 0 auto;
+}
+.hvr-ripple-out:before {
+  border: #076BFFFF solid 6px;
+}
+.order-block {
+  position: relative;
+}
+.popup {
+  background-color: white;
+  border: 1px solid black;
+  padding: 50px;
+  left: calc(50% - 350px);
+  top: calc(50% - 70px);
+  position: fixed;
+  /*display: flex;*/
+  justify-content: center;
+  align-items: center;
+}
+

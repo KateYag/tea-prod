@@ -1,0 +1,70 @@
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.accordion {
+  margin: 0 auto;
+}
+
+.accordion-button {
+  background: #0d6efd;
+  //background: linear-gradient(360deg, #076bff 0%, #007bff 100%);
+  border-radius: 10px;
+  color: white;
+  position: relative;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+
+}
+.ui-accordion-content {
+  border: none;
+  padding: 10px;
+}
+.accordion-button:not(.collapsed) {
+  color: white;
+  background: #0a58ca;
+  //background: linear-gradient(360deg, #0056b3 0%, #0069d9 100%);
+}
+
+
+.ui-state-active .ui-icon, .ui-button:active .ui-icon {
+  background-image: url("../../../assets/images/strelka3.png");
+  position: absolute;
+  right: 28px;
+  transform: rotate(-180deg);
+
+}
+.ui-icon-circle-arrow-s {
+  background-position: 0;
+}
+.ui-icon {
+  width: 20px;
+  height: 20px;
+}
+
+
+.ui-icon-circle-arrow-e {
+  background-position: 0;
+}
+.ui-icon, .ui-widget-content .ui-icon {
+  background-image: url("../../../assets/images/strelka3.png");
+  position: absolute;
+  right: 28px;
+}
+

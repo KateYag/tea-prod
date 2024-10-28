@@ -28,9 +28,24 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/jquery-ui-dist/jquery-ui.min.css",
+              "src/assets/css/slick.css",
+              "src/assets/css/slick-theme.css",
+              "src/assets/css/hover-min.css",
+              "src/assets/css/magnific-popup.css",
+              "src/assets/css/animate.min.css",
+              "node_modules/jquery-ui/themes/base/theme.css",
+              "node_modules/jquery-ui/themes/base/accordion.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/jquery-ui-dist/jquery-ui.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "src/assets/js/jquery.magnific-popup.min.js"
+
+            ]
           },
           "configurations": {
             "production": {
