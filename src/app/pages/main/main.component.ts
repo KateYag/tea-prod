@@ -1,5 +1,7 @@
+import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
+
 declare var $: any;
-import {AfterViewInit, Component, OnDestroy, OnInit} from '@angular/core';
+import {AfterViewInit, Component, NgModule, OnDestroy, OnInit} from '@angular/core';
 import {Subscription, timer} from "rxjs";
 import {Router} from "@angular/router";
 
@@ -11,10 +13,12 @@ import {Router} from "@angular/router";
 })
 export class MainComponent implements OnInit, OnDestroy, AfterViewInit {
 
+
   popupVisible = false;
   private subscription: Subscription | null = null;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+              private modalService: NgbModal) { }
 
   ngOnInit(): void {
     this.subscription = timer(10000).subscribe(() => {
@@ -37,7 +41,9 @@ export class MainComponent implements OnInit, OnDestroy, AfterViewInit {
   ngOnDestroy(): void {
     this.subscription?.unsubscribe();
   }
-
+  openPopup(content: any) {
+    this.modalService.open(content);
+  }
   goToCatalog(): void {
     this.popupVisible = false;
     this.router.navigate(['/catalog']);

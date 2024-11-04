@@ -27,16 +27,43 @@
 }
 .order-block {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .popup {
   background-color: white;
   border: 1px solid black;
   padding: 50px;
-  left: calc(50% - 350px);
-  top: calc(50% - 70px);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   position: fixed;
-  /*display: flex;*/
+  display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1000;
 }
 
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+router-outlet {
+  flex: 1;
+}
+
+
+
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';

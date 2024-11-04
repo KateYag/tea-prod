@@ -1,6 +1,6 @@
 
 <div class="container order-block">
-  <h2 class="text-center m-5">Сделать заказ</h2>
+  <h2 class="text-center m-5" *ngIf="isFormVisible">Сделать заказ</h2>
   <div class="form col-lg-6"  *ngIf="isFormVisible">
     <form class="row g-4" [formGroup]="orderForm" (ngSubmit)="onSubmit()">
       <div class="col-md-6">

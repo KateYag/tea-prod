@@ -3,31 +3,36 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MainComponent } from './pages/main/main.component';
-import { CatalogComponent } from './pages/catalog/catalog.component';
-import { ProductsComponent } from './pages/products/products.component';
-import { OrderComponent } from './pages/order/order.component';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {NgbAccordionModule, NgbModalModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {ProductsModule} from "./pages/products/products.module";
+import {MainModule} from "./pages/main/main.module";
+import {OrderModule} from "./pages/order/order.module";
+import {CatalogModule} from "./pages/catalog/catalog.module";
+import {SharedModule} from "./shared/shared.module";
+
+
 declare var $: any;
 @NgModule({
   declarations: [
-    AppComponent,
-    MainComponent,
-    CatalogComponent,
-    ProductsComponent,
-    OrderComponent,
-    HeaderComponent,
-    FooterComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule
+    NgbModule,
+    NgbAccordionModule,
+    NgbModalModule,
+    ProductsModule,
+    MainModule,
+    OrderModule,
+    CatalogModule,
+    SharedModule
+
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]

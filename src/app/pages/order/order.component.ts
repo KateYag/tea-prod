@@ -1,8 +1,10 @@
+import {CartService} from "../../shared/services/cart.service";
+
 declare var $: any;
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {CartService} from "../../services/cart.service";
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+
+import {FormBuilder, Validators} from "@angular/forms";
 import {HttpClient} from "@angular/common/http";
 interface OrderResponse {
   success: number;

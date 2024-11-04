@@ -1,18 +1,13 @@
-import {Subject} from "rxjs";
+import {Subject, Subscription} from "rxjs";
 
 declare var $: any;
 
 import { Component, OnInit } from '@angular/core';
-import {ProductService} from "../../services/product.service";
+import {Product} from "../../../models/product.model";
+import {ProductService} from "../../shared/services/product.service";
 
 
-interface Product {
-  id: number,
-  image: string,
-  title: string,
-  price: number,
-  description: string;
-}
+
 @Component({
   selector: 'app-catalog',
   templateUrl: './catalog.component.html',
@@ -21,20 +16,24 @@ interface Product {
 export class CatalogComponent implements OnInit {
   products: Product[] = [];
   loading: boolean = false;
+  private subscription: Subscription | null = null;
   constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
     this.loading = true;
-    this.productService.getProducts().subscribe(
-      (data) => {
+    this.subscription = this.productService.getProducts().subscribe({
+      next: (data) => {
         this.loading = false;
         this.products = data;
       },
-      (error) => {
+      error: (error) => {
         this.loading = false;
         console.error('Ошибка при загрузке данных о товарах:', error);
       }
-    );
+    });
+  }
+  ngOnDestroy() {
+    this.subscription?.unsubscribe();
   }
 
 }

@@ -6,10 +6,10 @@ import {ProductsComponent} from "./pages/products/products.component";
 import {OrderComponent} from "./pages/order/order.component";
 declare var $: any;
 const routes: Routes = [
-  { path: '', component: MainComponent},
-  { path: 'catalog', component: CatalogComponent},
-  { path: 'products/:id', component: ProductsComponent},
-  { path: 'order', component: OrderComponent},
+
+
+
+
 
 ];
 

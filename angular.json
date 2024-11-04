@@ -29,7 +29,6 @@
             ],
             "styles": [
               "src/styles.scss",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/jquery-ui-dist/jquery-ui.min.css",
               "src/assets/css/slick.css",
               "src/assets/css/slick-theme.css",
@@ -42,7 +41,6 @@
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/jquery-ui-dist/jquery-ui.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.min.js",
               "src/assets/js/jquery.magnific-popup.min.js"
 
             ]
@@ -52,8 +50,8 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
+                  "maximumWarning": "1mb",
+                  "maximumError": "2mb"
                 },
                 {
                   "type": "anyComponentStyle",

@@ -1,17 +1,13 @@
+import {Product} from "../../../models/product.model";
+
+
 declare var $: any;
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
-import {ProductService} from "../../services/product.service";
-import {CartService} from "../../services/cart.service";
+import {ProductService} from "../../shared/services/product.service";
+import {CartService} from "../../shared/services/cart.service";
 
-interface Product {
-  id: number,
-  image: string,
-  title: string,
-  price: number,
-  description: string;
 
-}
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
